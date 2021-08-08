@@ -40,7 +40,7 @@ const HomeScreen = () => {
                     <Card
                       key={index}
                       className='px-0 py-0 mx-2 my-2'
-                      style={{ maxWidth: '13rem' }}
+                      style={{ width: '13rem' }}
                     >
                       <div className=' my-0 image'>
                         <img
@@ -50,8 +50,24 @@ const HomeScreen = () => {
                         />
                       </div>
                       <Card.Body>
-                        <Card.Title>{food.name}</Card.Title>
-                        <Card.Text>{food.description}</Card.Text>
+                        <Card.Title
+                          style={{
+                            height: '1.8em',
+                            lineClamp: 1,
+                            WebkitLineClamp: 1,
+                          }}
+                        >
+                          {food.name}
+                        </Card.Title>
+                        <Card.Text
+                          style={{
+                            height: '4em',
+                            WebkitLineClamp: '3',
+                            maxHeight: '4em',
+                          }}
+                        >
+                          {food.description}
+                        </Card.Text>
                         <Card.Text>&euro;{food.price}</Card.Text>
                         <Button
                           variant='outline-primary'
@@ -140,11 +156,11 @@ const HomeScreen = () => {
                       <Button
                         variant='link'
                         onClick={() => {
+                          var newArr = CartItems.filter((element) => {
+                            return element.id !== cartData.id
+                          })
                           CartItems.splice(index, CartItems.length)
-                          localStorage.setItem(
-                            'cart',
-                            JSON.stringify(CartItems)
-                          )
+                          localStorage.setItem('cart', JSON.stringify(newArr))
                           setTotal(0)
                           setCartItems(GetItemsFromCart())
                         }}
