@@ -1,0 +1,10 @@
+.Background {
+  position: absolute;
+  color: #262626;
+}
+
+.Button {
+  color: #ff1744;
+  border-radius: 2em;
+  height: 1em;
+}
