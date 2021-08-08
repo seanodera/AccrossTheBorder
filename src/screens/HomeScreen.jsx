@@ -32,7 +32,7 @@ const HomeScreen = () => {
     <section>
       <Row>
         <Col sm='7'>
-          <Card>
+          <>
             <Container fluid className='py-0 px-0 mx-0 my-0'>
               <Row sm='auto'>
                 {Foods.map((food, index) => {
@@ -101,7 +101,7 @@ const HomeScreen = () => {
                 })}
               </Row>
             </Container>
-          </Card>
+          </>
         </Col>
 
         <Col sm='4'>

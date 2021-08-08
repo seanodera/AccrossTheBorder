@@ -1,15 +1,17 @@
 import React from 'react'
-import { Button, Container, Form, FormControl, Navbar } from 'react-bootstrap'
+import { Container, Navbar } from 'react-bootstrap'
 const Header = () => {
   return (
     <header>
       <Navbar bg='dark' expand='lg'>
-        <Container>
-          <Navbar.Brand href='/'>FoodShop</Navbar.Brand>
-          <Navbar.Toggle aria-controls='basic-navbar-nav' />
-          <Navbar.Collapse id='basic-navbar-nav'>
-            <Button>Cart</Button>
-          </Navbar.Collapse>
+        <Container className='text-center'>
+          <Navbar.Brand
+            href='/'
+            className='text-center'
+            style={{ color: '#FF1744' }}
+          >
+            AccrossTheBorder
+          </Navbar.Brand>
         </Container>
       </Navbar>
     </header>
